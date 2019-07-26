@@ -11,7 +11,7 @@ if (!$db) { die("Hata oluştu: " . mysqli_connect_error()); }
 //echo "Bağlantı tamam!";
  ?>
 
-<h1>Kayıt Liste</h1>
+<h1>Kayıt Listesi</h1>
 
 <table border=1 cellpadding=5 cellspacing=0>
   <tr>
