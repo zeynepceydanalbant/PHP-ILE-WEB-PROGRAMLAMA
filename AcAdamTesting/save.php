@@ -1,5 +1,5 @@
 <?php
-
+include("sabitler.php");
 $servername = "localhost";
 $username   = "root";
 $password   = "1";
@@ -13,7 +13,7 @@ if (!$db) { die("Hata oluştu: " . mysqli_connect_error()); }
 
 if( isset($_POST["adisoyadi"]) ) {
     // Önce EKLEME için SQL hazırlayalım...
-    $TUZ= "ğş?/8.2Wc<*";
+
     $tuzlu =md5($_POST["parola"].$TUZ);
     $SQL = sprintf("
         INSERT INTO
