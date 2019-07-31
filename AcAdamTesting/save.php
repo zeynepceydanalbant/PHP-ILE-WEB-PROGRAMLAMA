@@ -11,6 +11,15 @@ $db = mysqli_connect($servername, $username, $password, $dbname);
 if (!$db) { die("Hata oluştu: " . mysqli_connect_error()); }
 //echo "Bağlantı tamam!";
 
+  $SQL   = "SELECT DISTINCT il FROM referandum ORDER BY il";
+  $rows  = mysqli_query($db, $SQL);
+  $iller ="";
+  while($row = mysqli_fetch_assoc($rows)) {
+      $iller .= sprintf(
+                "<option value='%s'>%s</option> \n",
+                $row["il"], $row["il"]
+              );
+  }
 if( isset($_POST["adisoyadi"]) ) {
     // Önce EKLEME için SQL hazırlayalım...
 
@@ -31,7 +40,7 @@ if( isset($_POST["adisoyadi"]) ) {
           kapino      = '%s',
           adres       = '%s'  ",
             $_POST["adisoyadi"], $_POST["telno"],
-            $tuzlu, $_POST["il"],
+            $tuzlu, $_POST["sehir"],
             $_POST["ilce"], $_POST["mahalle"],
             $_POST["cadde"], $_POST["sokak"],
             $_POST["binano"], $_POST["kapino"],
@@ -56,12 +65,11 @@ if( isset($_POST["adisoyadi"]) ) {
   <br /><br />
   Parola:<input required type="password" name="parola" value="<?php echo $_POST["parola"];?>">
   <br /><br />
-  İL:<select required name='il'>
-    <option value="">SEÇİNİZ</option>
-    <option value="adana"  ?>Adana</option>
-    <option value="artvin"  ?>Artvin</option>
-  </select>
-    <br /><br />
+İL:
+<select name="sehir" >
+  <?php echo $iller; ?>
+</select>
+<br /><br />
   İLÇE:<select required name='ilce'>
     <option value="">SEÇİNİZ</option>
     <option value="pendik" ; >Pendik</option>

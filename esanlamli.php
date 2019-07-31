@@ -18,7 +18,7 @@ if (!$db) { die("Hata oluştu: " . mysqli_connect_error()); }
               WHERE (kelime1 = '%s' OR kelime2 = '%s') "
               ,$_POST["kelime"],$_POST["kelime"]);
             $rows  = mysqli_query($db, $SQL);
-             echo "$SQL";
+             echo "$SQL";e
               while($row = mysqli_fetch_assoc($rows)) {
                   echo sprintf("
                     <tr>
