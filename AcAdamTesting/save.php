@@ -1,5 +1,12 @@
 <?php
-include("sabitler.php");
+//Bu dosya , program içinde kullanılan sabit değişkenleri tutar
+$TUZ= "ğş?/8.2Wc<*";
+//bu sabit md5 sifreleme icin kullanilir
+?>
+
+
+<?php
+//include("sabitler.php");
 $servername = "localhost";
 $username   = "root";
 $password   = "1";
@@ -59,39 +66,54 @@ if( isset($_POST["adisoyadi"]) ) {
 <h1>Kullanıcı Kayıt Formu</h1>
 <form method="post">
 
-  Adı Soyadı:<input required type="text" name="adisoyadi" value="<?php echo $_POST["adisoyadi"];?>">
-  <br /><br />
-  Telefon Numarasi:<input required type="text" name="telno" value="<?php echo $_POST["telno"];?>">
-  <br /><br />
-  Parola:<input required type="password" name="parola" value="<?php echo $_POST["parola"];?>">
-  <br /><br />
-İL:
-<select name="sehir" >
-  <?php echo $iller; ?>
-</select>
-<br /><br />
-  İLÇE:<select required name='ilce'>
-    <option value="">SEÇİNİZ</option>
-    <option value="pendik" ; >Pendik</option>
-    <option value="Kadiköy" ; >Kadıköy</option>
-  </select>
-  <br /><br />
-  MAHALLE:<select required name='mahalle'>
-    <option value="">SEÇİNİZ</option>
-    <option value="bostanci" >Bostancı</option>
-    <option value="kurtköy" >Kurtköy</option>
-  </select>
-  <br /><br />
-  Cadde:<input required type="text" name="cadde" value="<?php echo $_POST["cadde"];?>">
-  <br /><br />
-  Sokak:<input required type="text" name="sokak" value="<?php echo $_POST["sokak"];?>">
+  Adı Soyadı:
+  <input required type="text" name="adisoyadi" value="<?php echo $_POST["adisoyadi"];?>">
   <br /><br />
 
-  Bina No:<input required type="text" name="binano" value="<?php echo $_POST["binano"];?>">
-  Kapı No:<input required type="text" name="kapino" value="<?php echo $_POST["kapino"];?>">
+  Telefon Numarasi:
+  <input required type="text" name="telno" value="<?php echo $_POST["telno"];?>">
+  <br /><br />
+
+  Parola:
+  <input required type="password" name="parola" value="<?php echo $_POST["parola"];?>">
+  <br /><br />
+
+  İL:
+  <select name="sehir" > <?php echo $iller; ?></select>
+  <br /><br />
+
+  İLÇE:
+  <select required name='ilce'>
+  <option value="">SEÇİNİZ</option>
+  <option value="pendik" ; >Pendik</option>
+  <option value="Kadiköy" ; >Kadıköy</option>
+  </select>
+  <br /><br />
+
+  MAHALLE:
+  <select required name='mahalle'>
+    <option value="">SEÇİNİZ</option>
+    <option value="bostanci" >Bostancı</option>
+    <option value="kurtköy" >Kurtköy</option></select>
+  <br /><br />
+
+  Cadde:
+  <input required type="text" name="cadde" value="<?php echo $_POST["cadde"];?>">
+  <br /><br />
+
+  Sokak:
+  <input required type="text" name="sokak" value="<?php echo $_POST["sokak"];?>">
+  <br /><br />
+
+  Bina No:
+  <input required type="text" name="binano" value="<?php echo $_POST["binano"];?>">
+
+  Kapı No:
+  <input required type="text" name="kapino" value="<?php echo $_POST["kapino"];?>">
 
   Açık Adres:<input required type="text" name="adres" value="<?php echo $_POST["adres"];?>">
   <br /><br />
 
   <input type="submit" name="" value="Üye Ekle (insert)">
+
 </form>
