@@ -14,11 +14,11 @@ if (!$db) { die("Hata oluştu: " . mysqli_connect_error()); }
 
       $SQL = sprintf("
               SELECT *
-              FROM `esanlam`
-              WHERE (`kelime1` = '%s' OR `kelime2` = '%s') "
+              FROM esanlam
+              WHERE (kelime1 = '%s' OR kelime2 = '%s') "
               ,$_POST["kelime"],$_POST["kelime"]);
-
-echo "$SQL";
+            $rows  = mysqli_query($db, $SQL);
+             echo "$SQL";
               while($row = mysqli_fetch_assoc($rows)) {
                   echo sprintf("
                     <tr>
